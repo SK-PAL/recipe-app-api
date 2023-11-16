@@ -1,4 +1,4 @@
-FROM python:3.9-alpine-3.13
+FROM python:3.9-alpine
 LABEL maintainer="Shiv Kumar Pal"
 
 ENV PYTHONUNBUFFERED 1
@@ -13,7 +13,7 @@ RUN python -m venv /py && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp/ && \
     adduser \
-        --diabled-password \
+        --disabled-password \
         --no-create-home \
         django-user
 
